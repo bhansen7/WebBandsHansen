@@ -158,6 +158,13 @@ public class Bands {
 	}
 
 	public String getLevelOfBand() {
+		if (this.levelBandId == JUNIOR_HIGH_LEVEL_ID) {
+			this.levelOfBand = "Junior High";
+		} else if (this.levelBandId == HIGH_SCHOOL_LEVEL_ID) {
+			this.levelOfBand = "Highschool";
+		} else if (this.levelBandId == ELEMENTARY_LEVEL_ID) {
+			this.levelOfBand = "Elementary";
+		} 
 		return levelOfBand;
 	}
 

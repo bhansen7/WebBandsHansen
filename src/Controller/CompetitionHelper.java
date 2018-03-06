@@ -33,21 +33,21 @@ public class CompetitionHelper {
 	}
 
 	//not being implemented at this time
-	//public void deleteBandFromCompetition(Competition toDelete) {
+	public void deleteBandFromCompetition(Competition toDelete) {
 		// TODO Auto-generated method stub
-	//	EntityManager em = emfactory.createEntityManager();
-	//	em.getTransaction().begin();
-	//	TypedQuery<Competition> typedQuery = em.createQuery(
-	//			"select li from Competition li where li.competitionId = :selectedId and li.bandId = :selectedBandId",
-	//			Competition.class);
-	//	typedQuery.setParameter("selectedId", toDelete.getCompetitionId()); 
-	//	typedQuery.setParameter("selectedBandId", toDelete.getBandId());
-	//	typedQuery.setMaxResults(1);
-	//	Competition result = typedQuery.getSingleResult();
-	//	System.out.println("TEST - result: " + result);
-	//	em.remove(result);
-	//	em.getTransaction().commit();
-	//	em.close();
-	//}
+		EntityManager em = emfactory.createEntityManager();
+		em.getTransaction().begin();
+		TypedQuery<Competition> typedQuery = em.createQuery(
+				"select li from Competition li where li.competitionId = :selectedId and li.bandId = :selectedBandId",
+				Competition.class);
+		typedQuery.setParameter("selectedId", toDelete.getCompetitionId()); 
+		typedQuery.setParameter("selectedBandId", toDelete.getBandId());
+		typedQuery.setMaxResults(1);
+		Competition result = typedQuery.getSingleResult();
+		System.out.println("TEST - result: " + result);
+		em.remove(result);
+		em.getTransaction().commit();
+		em.close();
+	}
 
 }
