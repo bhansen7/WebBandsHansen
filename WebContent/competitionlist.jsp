@@ -14,7 +14,7 @@
 		<table>
 		<tr> 
 			<th> </th>
-			<th>Competition ID</th>
+			<th>Competition Name</th>
 			<th>Band ID</th> 
 		</tr>
 			<c:forEach items="${requestScope.allItems}" var="currentitem">
