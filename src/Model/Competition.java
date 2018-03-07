@@ -14,12 +14,13 @@ import javax.persistence.Transient;
 public class Competition {
 	@Id
 	@Column(name = "competition_id")
-	protected int competitionId;
-	//private String eventName;
+	protected int competitionId; 
 	@Column(name="band_id")
 	private int bandId; 
 	@Transient
 	String competitionName;
+	@Transient
+	String bandName;
 	
 	public Competition() {
 		super();
@@ -51,6 +52,22 @@ public class Competition {
 			this.competitionName = "Waukee Festival";
 		}
 		return competitionName;
+	}
+	
+	public String getBandName() {
+		if (this.bandId == 3) {
+			this.bandName = "band 3";
+		}else if (this.bandId == 4) {
+			this.bandName = "Band 4";
+		}else {
+			this.bandName = "All Others";
+		}
+		//I just get nulls with this
+		//Bands nb = new Bands();
+		//bandName = nb.bandNameReport();
+		//System.out.println(bandName);
+		 
+		return bandName;
 	}
 
 	@Override

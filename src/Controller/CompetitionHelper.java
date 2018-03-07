@@ -7,7 +7,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
-import Model.Bands;
 import Model.Competition;
 
 public class CompetitionHelper {

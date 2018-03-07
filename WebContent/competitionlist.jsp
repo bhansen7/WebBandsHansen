@@ -8,8 +8,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Competition List</title>
+<style>
+table, td, th {
+	border: 1px solid black;
+	border-collapse: separate;
+	border-spacing: 2px;
+	padding: 2px;
+}
+</style>
 </head>
 <body>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTncVt5ufwn8ULGoHezHKtYppBiAAt0QowYTi6wYhvnX1p0LK_S7g"> 
+<h2>View All Competitions</h2>
 <form method = "post" action = "AlterCompetitionServlet">
 		<table>
 		<tr> 
@@ -21,7 +31,7 @@
 				<tr>
 					<td><input type="radio" name="competitionId" value="${currentitem.competitionId}"></td>
 					<td>${currentitem.getCompetitionName()}</td>
-					<td>${currentitem.bandId}</td> 
+					<td>${currentitem.getBandName()}</td> 
 				</tr>
 			</c:forEach>
 		</table>  

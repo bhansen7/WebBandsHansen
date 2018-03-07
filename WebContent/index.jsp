@@ -7,6 +7,7 @@
 <title>Bands</title>
 </head>
 <body>
-
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpywqeeoc2rZrRUbuziQIobfRGAcN6UfAZsWVlrqIC2fditHzK">
+ <h1>Band Signup</h1>
 </body>
 </html>

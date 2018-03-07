@@ -7,6 +7,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<style>
+table, td, th {
+	border: 1px solid black;
+	border-collapse: separate;
+	border-spacing: 2px;
+	padding: 2px;
+}
+</style>
 </head>
 <body>
 	<form action="EditBandServlet" method="post">

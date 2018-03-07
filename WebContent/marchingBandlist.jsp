@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 <style>
 table, td, th {
-	border: 1px solid balck;
+	border: 1px solid black;
 	border-collapse: separate;
 	border-spacing: 2px;
 	padding: 2px;
@@ -18,6 +18,8 @@ table, td, th {
 </style>
 </head>
 <body>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3ABOPsjdTWnipQQ0c4HaieQ4FdBhIw4Iqu6nQKGjeB6YE-X2kJQ"> 
+<h2>View List of Marching Bands</h2>
 <form method = "post" action = "AlterMarchingBandServlet">
 		<table>
 		<tr>
