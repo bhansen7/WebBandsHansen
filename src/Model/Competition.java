@@ -44,11 +44,11 @@ public class Competition {
 	public void setBandId(int bandId) {
 		this.bandId = bandId;
 	}
-	public String getCompetitionName(String competitionName) {
+	public String getCompetitionName() {
 		if (this.competitionId == 1) {
 			this.competitionName = "State Competition";
 		}else if (this.competitionId == 2) {
-			competitionName = "Waukee Festival";
+			this.competitionName = "Waukee Festival";
 		}
 		return competitionName;
 	}
