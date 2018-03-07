@@ -9,9 +9,18 @@
 Name of Band: <input type ="text" name = "name of band"><br />
 Number of Members: <input type = "text" name = "number of members"><br /> 
 Location of Band: <input type = "text" name = "location of band"><br />
-Level of Band: <input type = "text" name = "level of band"><br /> 
-If you are bring props, what are they?: <input type = "text" name = "Type of Props"><br />
-Do you have a color guard? (yes/no): <input type = "text" name = "Has colorguard"><br />
+Level of Band: <select name="level of band"> 
+			<option value=1>Elementary</option>
+			<option value=2>Junior High</option>
+			<option value=3>High School</option>
+			</select><br />
+Types of props (may leave blank)? <input type = "text" name = "Type of Props"><br /> 
+
+Do you have a color guard? <select name = "Has colorguard">
+			<option value=yes>Yes</option>
+			<option value=no>No</option>
+			</select><br />
+
 <input type = "submit" value="Add Band"><br />
 </form>
 <a href ="index.html"> Back to main menu</a><br />

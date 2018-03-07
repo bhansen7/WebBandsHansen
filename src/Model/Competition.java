@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;  
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "participating_bands")
@@ -17,6 +18,8 @@ public class Competition {
 	//private String eventName;
 	@Column(name="band_id")
 	private int bandId; 
+	@Transient
+	String competitionName;
 	
 	public Competition() {
 		super();
@@ -40,6 +43,14 @@ public class Competition {
 	}
 	public void setBandId(int bandId) {
 		this.bandId = bandId;
+	}
+	public String getCompetitionName(String competitionName) {
+		if (this.competitionId == 1) {
+			this.competitionName = "State Competition";
+		}else if (this.competitionId == 2) {
+			competitionName = "Waukee Festival";
+		}
+		return competitionName;
 	}
 
 	@Override

@@ -44,7 +44,7 @@ public class AlterBandServlet extends HttpServlet {
 		if (act == null) {
 			getServletContext().getRequestDispatcher("/viewAllBandsServlet").forward(request, response);
 		}else if (act.equals("Edit Selected Band")) {
-				System.out.println("In Edit");
+				System.out.println("In Edit"); 
 				Integer tempId = Integer.parseInt(request.getParameter("bandId"));
 				System.out.println("temp id " + tempId);
 				Bands bandToEdit = dao.searchForBandById(tempId);

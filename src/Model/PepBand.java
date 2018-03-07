@@ -57,6 +57,21 @@ public class PepBand extends Bands {
 	}
 
 	public String getEventName() {
+		if (this.eventId == 1) {
+			this.eventName = "Girls basketball game";
+		}else if (this.eventId == 2){
+			this.eventName = "Boys basketball game";
+		}else if (this.eventId == 3){
+			this.eventName = "Football game";
+		}else if (this.eventId == 4) {
+			this.eventName = "Wrestling meet";
+		}else if (this.eventId == 5) {
+			this.eventName = "Homecoming pep rally";
+		}else if (this.eventId == 6) {
+			this.eventName = "District final pep rally";
+		}else if (this.eventId == 7) {
+			this.eventName = "Red ribbon week pep rally";
+		}
 		return eventName;
 	}
 
