@@ -41,7 +41,15 @@ public class AlterBandServlet extends HttpServlet {
 		String act = request.getParameter("doThisToBand");
 		BandsHelper dao = new BandsHelper(); 
 		System.out.println("act " + act);
-		if (act == null) {
+		String checkId = request.getParameter("bandId");
+		System.out.println("id" + checkId);
+		if (checkId == null) {
+			System.out.println("In error checking"); 
+			
+			getServletContext().getRequestDispatcher("/NoBandSelectedError.jsp").forward(request, response);
+			
+		}
+		if (act == null) {  
 			getServletContext().getRequestDispatcher("/viewAllBandsServlet").forward(request, response);
 		}else if (act.equals("Edit Selected Band")) {
 				System.out.println("In Edit"); 

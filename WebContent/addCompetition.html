@@ -2,12 +2,16 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Add Band to Competition</title>
 </head>
 <body>
-<form action = "AddCompetitionServlet" method="post">
-Competition ID: <input type ="text" name = "competition id"><br />
+<form action = "AddCompetitionServlet" method="post"> 
+Competition: <select name="competition id"> 
+			<option value=1>State Competition/option>
+			<option value=2>Waukee Festival</option> 
+			</select><br />
 Band ID: <input type = "text" name = "band id"> <br /> 
+
 <input type = "submit" value="Add Band"><br />
 </form>
 <a href ="index.html"> Back to Main Menu</a><br />
