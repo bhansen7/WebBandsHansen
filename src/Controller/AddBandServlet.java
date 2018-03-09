@@ -42,6 +42,13 @@ public class AddBandServlet extends HttpServlet {
 		String locationOfBand = request.getParameter("location of band");
 		String levelBandIdStr = request.getParameter("level of band"); 
 		
+		 try { 
+		        Integer.parseInt(numberOfMembersStr); 
+		    } catch(NumberFormatException e) { 
+		    	getServletContext().getRequestDispatcher("/BandNumericError.jsp").forward(request, response);
+		    } catch(NullPointerException e) {
+		    	getServletContext().getRequestDispatcher("/BandNumericError.jsp").forward(request, response);
+		    }
 		int numberOfMembers = Integer.valueOf(numberOfMembersStr);
 		int levelBandId = Integer.valueOf(levelBandIdStr);
  

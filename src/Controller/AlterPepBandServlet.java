@@ -38,11 +38,17 @@ public class AlterPepBandServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String act = request.getParameter("doThisToBand");
-		PepBandHelper dao = new PepBandHelper(); 
-		System.out.println("act " + act);
+		PepBandHelper dao = new PepBandHelper();  
+		
 		if (act == null) {
 			getServletContext().getRequestDispatcher("/viewAllPepBandsServlet").forward(request, response);
 		}else if (act.equals("Edit Selected Band")) {
+			String checkId = request.getParameter("bandId"); 
+			if (checkId == null) { 
+				
+				getServletContext().getRequestDispatcher("/NoPepBandSelected.jsp").forward(request, response);
+				
+			}
 				System.out.println("In Edit");
 				Integer tempId = Integer.parseInt(request.getParameter("bandId"));
 				System.out.println("temp id " + tempId);
@@ -50,6 +56,12 @@ public class AlterPepBandServlet extends HttpServlet {
 				request.setAttribute("bandToEdit", bandToEdit);
 				getServletContext().getRequestDispatcher("/editPepBands.jsp").forward(request,response);
 		} else if (act.equals("Delete Selected Band")) {
+			String checkId = request.getParameter("bandId"); 
+			if (checkId == null) {
+				
+				getServletContext().getRequestDispatcher("/NoPepBandSelected.jsp").forward(request, response);
+				
+			}
 			Integer tempId = Integer.parseInt(request.getParameter("bandId"));
 			PepBand bandToDelete = dao.searchForBandById(tempId);
 			

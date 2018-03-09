@@ -17,10 +17,11 @@ h2 {color: red}
 </head>
 <body>
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_FYxnRt3tzi4900z84A-Ckk6eTqzqchv7-_wZDo7be3C-dmJx" align="middle"> 
-<h2>You forgot to choose a band</h2>
+<h2>You must enter an integer in number of members</h2>
 
 
-<a href ="viewAllBandsServlet"> Back to Band List</a><br />				
+<a href ="addMarchingBand.html"> Back to Add Marching Band</a><br />	
+<a href ="viewAllMarchingBandsServlet"> Back to Marching Band List</a><br />				
 <a href ="index.html"> Back to Main Menu</a><br />
 
 </body>

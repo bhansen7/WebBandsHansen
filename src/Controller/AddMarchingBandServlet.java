@@ -44,7 +44,13 @@ public class AddMarchingBandServlet extends HttpServlet {
 		String typesOfProps = request.getParameter("Type of Props"); 
 		String hasColorGuardStr = request.getParameter("Has colorguard"); 
 		
-		
+		try { 
+	        Integer.parseInt(numberOfMembersStr); 
+	    } catch(NumberFormatException e) { 
+	    	getServletContext().getRequestDispatcher("/MarchingBandNumericError.jsp").forward(request, response);
+	    } catch(NullPointerException e) {
+	    	getServletContext().getRequestDispatcher("/MarchingBandNumericError.jsp").forward(request, response);
+	    }
 		int numberOfMembers = Integer.valueOf(numberOfMembersStr);
 		int levelBandId = Integer.valueOf(levelBandIdStr);
 		boolean hasColorGuard = hasColorGuardStr.equalsIgnoreCase("yes");

@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Marching band list</title>
 <style>
 table, td, th {
 	border: 1px solid black;
@@ -19,7 +19,7 @@ table, td, th {
 </head>
 <body>
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3ABOPsjdTWnipQQ0c4HaieQ4FdBhIw4Iqu6nQKGjeB6YE-X2kJQ"> 
-<h2>View List of Marching Bands</h2>
+
 <form method = "post" action = "AlterMarchingBandServlet">
 		<table>
 		<tr>

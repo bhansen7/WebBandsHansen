@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Pep Band List</title>
 <style>
 table, td, th {
 	border: 1px solid black;
@@ -20,7 +20,7 @@ table, td, th {
 </head>
 <body>
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIvuRNXGuo1wGw-Cp4RtCkbf2l2s1lqr3Ku04bPjQwBLlxCbvr7A"> 
-<h2>View List of Pep Bands</h2>
+ 
 <form method = "post" action = "AlterPepBandServlet">
 		<table>
 		<tr>

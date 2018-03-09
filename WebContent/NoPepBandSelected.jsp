@@ -16,11 +16,10 @@ h2 {color: red}
 </style>
 </head>
 <body>
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_FYxnRt3tzi4900z84A-Ckk6eTqzqchv7-_wZDo7be3C-dmJx" align="middle"> 
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIvuRNXGuo1wGw-Cp4RtCkbf2l2s1lqr3Ku04bPjQwBLlxCbvr7A" align="middle"> 
 <h2>You forgot to choose a band</h2>
 
-
-<a href ="viewAllBandsServlet"> Back to Band List</a><br />				
+<a href ="viewAllPepBandsServlet"> Back to Pep Band List</a><br />				
 <a href ="index.html"> Back to Main Menu</a><br />
 
 </body>

@@ -35,9 +35,16 @@ public class AddPepBandServlet extends HttpServlet {
 		String levelBandIdStr = request.getParameter("level of band"); 
 		String eventIdStr = request.getParameter("Event Id");  
 		
-		
+		try { 
+	        Integer.parseInt(numberOfMembersStr); 
+	    } catch(NumberFormatException e) { 
+	    	getServletContext().getRequestDispatcher("/PepBandNumericError.jsp").forward(request, response);
+	    } catch(NullPointerException e) {
+	    	getServletContext().getRequestDispatcher("/PepBandNumericError.jsp").forward(request, response);
+	    }
 		int numberOfMembers = Integer.valueOf(numberOfMembersStr);
 		int levelBandId = Integer.valueOf(levelBandIdStr);
+		
 		int eventId = Integer.valueOf(eventIdStr); 
 		
 		System.out.println("#Members " + numberOfMembers);

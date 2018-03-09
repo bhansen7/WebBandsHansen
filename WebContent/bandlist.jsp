@@ -19,7 +19,6 @@ table, td, th {
 </head>
 <body>
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_FYxnRt3tzi4900z84A-Ckk6eTqzqchv7-_wZDo7be3C-dmJx" align="middle"> 
-<h2>View List of Concert Bands</h2>
 <form method = "post" action = "AlterBandServlet">
 		<table>
 		<tr>

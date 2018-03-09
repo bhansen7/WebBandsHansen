@@ -16,11 +16,10 @@ h2 {color: red}
 </style>
 </head>
 <body>
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_FYxnRt3tzi4900z84A-Ckk6eTqzqchv7-_wZDo7be3C-dmJx" align="middle"> 
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3ABOPsjdTWnipQQ0c4HaieQ4FdBhIw4Iqu6nQKGjeB6YE-X2kJQ" align="middle"> 
 <h2>You forgot to choose a band</h2>
 
-
-<a href ="viewAllBandsServlet"> Back to Band List</a><br />				
+<a href ="viewAllMarchingBandsServlet"> Back to Marching Band List</a><br />				
 <a href ="index.html"> Back to Main Menu</a><br />
 
 </body>
