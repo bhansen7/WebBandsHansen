@@ -25,7 +25,9 @@ public class CompetitionHelper {
 	public List<Competition> showAllCompetition() {
 		// TODO Auto-generated method stub
 		EntityManager em = emfactory.createEntityManager();
+		//TypedQuery<Competition> allResults = em.createQuery("select li from Competition li order by li.competitionId", Competition.class);
 		TypedQuery<Competition> allResults = em.createQuery("select li from Competition li", Competition.class);
+		//TypedQuery<Competition> allResults = em.createQuery("select li from Competition li where li.competitionId = '1'", Competition.class);
 		List<Competition> allCompetition = allResults.getResultList();
 		em.close();
 		return allCompetition; 

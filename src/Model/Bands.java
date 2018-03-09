@@ -179,6 +179,29 @@ public class Bands {
 		}
 	}
 
+//	private double calcCostOfParticipation(int numberOfMembers2, int levelOfBand2) {
+//		// TODO Auto-generated method stub
+//		
+//
+//			if (this.numberOfMembers < 25) {
+//				quantityDiscount = 0;
+//			} else if (this.numberOfMembers > 100) {
+//				quantityDiscount = 10.00;
+//			} else {
+//				quantityDiscount = 5.50;
+//			}
+//			
+//			Double totalCostOfParticipation;
+//			if (this.levelOfBand == ELEMENTARY_LEVEL_ID) {
+//				totalCostOfParticipation = 0.0;
+//			} else if (this.levelOfBand == JUNIOR_HIGH_LEVEL_ID) {
+//				totalCostOfParticipation = JUNIOR_HIGH_COST - quantityDiscount;
+//			} else {
+//				totalCostOfParticipation = HIGH_SCHOOL_COST - quantityDiscount;
+//			}
+//	//1		totalCostOfParticipation = 599.99;
+//			return totalCostOfParticipation;
+//	}
 	@Override
 	public String toString() {
 		return "Bands [numberOfMembers=" + numberOfMembers + ", nameOfBand=" + nameOfBand + ", locationOfBand="

@@ -43,10 +43,15 @@ public class EditBandServlet extends HttpServlet {
 		String bandName = request.getParameter("name of band"); 
 		String locationOfBand = request.getParameter("location of band"); 
 		Integer tempId = Integer.parseInt(request.getParameter("bandId"));
+		Integer numberOfMembers = Integer.parseInt(request.getParameter("number of members"));
+		Integer levelOfBand = Integer.parseInt(request.getParameter("level of band"));
 		
 		Bands itemToUpdate = dao.searchForBandById(tempId);
 		itemToUpdate.setNameOfBand(bandName);
 		itemToUpdate.setLocationOfBand(locationOfBand);
+		itemToUpdate.setNumberOfMembers(numberOfMembers);
+		itemToUpdate.setLevelBandId(levelOfBand);
+		
 		
 		dao.updateBands(itemToUpdate);
 		

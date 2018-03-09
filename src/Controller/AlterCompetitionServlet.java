@@ -37,7 +37,7 @@ public class AlterCompetitionServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String act = request.getParameter("doThisToCompetition");
-		CompetitionHelper dao = new CompetitionHelper(); 
+		//CompetitionHelper dao = new CompetitionHelper(); 
 		System.out.println("act " + act);
 		if (act == null) {
 			getServletContext().getRequestDispatcher("/viewCompetitionListServlet").forward(request, response);

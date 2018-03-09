@@ -23,6 +23,15 @@ table, td, th {
 		Band Location: <input
 			type="text" name="location of band"
 			value="${bandToEdit.locationOfBand }"> 
+		Number of Members: <input
+			type="text" name="number of members"
+			value="${bandToEdit.numberOfMembers }"> 
+		Level of Band: <select name="level of band">
+			<option value=1>Elementary</option>
+			<option value=2>Junior High</option>
+			<option value=3>High School</option>
+			value="${bandToEdit.levelBandId}"
+			</select><br />
 		<input type="hidden"
 			name="bandId" value="${bandToEdit.bandId }">
 		 <input type="submit" value="Save Edited Band">

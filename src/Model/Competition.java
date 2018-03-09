@@ -4,17 +4,19 @@ import java.util.List;
 
 import javax.persistence.Column; 
 import javax.persistence.Entity;
-import javax.persistence.Id;  
+import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-@Entity
+@Entity @IdClass(CompetitionId.class)
 @Table(name = "participating_bands")
 
 public class Competition {
 	@Id
 	@Column(name = "competition_id")
 	protected int competitionId; 
+	@Id
 	@Column(name="band_id")
 	private int bandId; 
 	@Transient
@@ -55,16 +57,17 @@ public class Competition {
 	}
 	
 	public String getBandName() {
-		if (this.bandId == 3) {
-			this.bandName = "band 3";
-		}else if (this.bandId == 4) {
-			this.bandName = "Band 4";
-		}else {
-			this.bandName = "All Others";
-		}
+//		if (this.bandId == 3) {
+//			this.bandName = "band 3";
+//		}else if (this.bandId == 4) {
+//			this.bandName = "Band 4";
+//		}else {
+//			this.bandName = "All Others";
+//		}
 		//I just get nulls with this
+		//in bandhelper create method tha gets band name from band then call from here
 		//Bands nb = new Bands();
-		//bandName = nb.bandNameReport();
+		//bandName = nb.getNameOfBand();
 		//System.out.println(bandName);
 		 
 		return bandName;
