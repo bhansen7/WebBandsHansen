@@ -38,23 +38,6 @@ public class MarchingBand extends Bands {
 		super(bandId);
 	}
 
-	//used when we were forcing number of buses
-	// public MarchingBand(int bandId, String typesOfProps, int numberOfBuses,
-	// boolean hasColorGuard) {
-	// super();
-	// this.bandId = bandId;
-	// setTypesOfProps(typesOfProps);
-	// this.numberOfBuses = numberOfBuses;
-	// setHasColorGuard(hasColorGuard);
-	// }
-
-	// used for original tester when we had hasProps
-	//public MarchingBand(boolean hasProps, String typesOfProps, boolean hasColorGuard) {
-	//	super();
-	//	setHasProps(hasProps);
-	//	this.typesOfProps = typesOfProps;
-	//	setHasColorGuard(hasColorGuard);
-	//}
 
 	public MarchingBand(int numberOfMembers, String nameOfBand, String locationOfBand, int levelBandId,
 			String typesOfProps, boolean hasColorGuard) {

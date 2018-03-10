@@ -43,14 +43,23 @@ public class EditBandServlet extends HttpServlet {
 		String bandName = request.getParameter("name of band"); 
 		String locationOfBand = request.getParameter("location of band"); 
 		Integer tempId = Integer.parseInt(request.getParameter("bandId"));
-		Integer numberOfMembers = Integer.parseInt(request.getParameter("number of members"));
+		String numberOfMembersStr = request.getParameter("number of members");
 		Integer levelOfBand = Integer.parseInt(request.getParameter("level of band"));
 		
+		 try { 
+		        Integer.parseInt(numberOfMembersStr); 
+		    } catch(NumberFormatException e) { 
+		    	getServletContext().getRequestDispatcher("/BandNumericError.jsp").forward(request, response);
+		    } catch(NullPointerException e) {
+		    	getServletContext().getRequestDispatcher("/BandNumericError.jsp").forward(request, response);
+		    }
+		Integer numberOfMembers = Integer.parseInt(request.getParameter("number of members"));
 		Bands itemToUpdate = dao.searchForBandById(tempId);
 		itemToUpdate.setNameOfBand(bandName);
 		itemToUpdate.setLocationOfBand(locationOfBand);
 		itemToUpdate.setNumberOfMembers(numberOfMembers);
 		itemToUpdate.setLevelBandId(levelOfBand);
+		itemToUpdate.setCostOfParticipation(numberOfMembers, levelOfBand);
 		
 		
 		dao.updateBands(itemToUpdate);

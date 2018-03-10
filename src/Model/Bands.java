@@ -23,7 +23,6 @@ import javax.persistence.OneToOne;
 import javax.persistence.SecondaryTable;
 import javax.persistence.Table;
 import javax.persistence.Transient;
- 
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -46,15 +45,12 @@ public class Bands {
 	@Column(name = "cost_of_participation")
 	private double costOfParticipation;
 
-	@Column(name = "level_of_band")
-	// @Convert(converter = BandLevelAttributeConverter.class)
+	@Column(name = "level_of_band") 
 	private int levelBandId;
 	@Column(name = "band_type")
 	private String bandType;
 
-	@Transient
-	// @Convert(converter = BandLevelAttributeConverter.class)
-	//not yet implementing the converter
+	@Transient 
 	private String levelOfBand;
 
 	@Transient
@@ -92,6 +88,7 @@ public class Bands {
 		this.nameOfBand = nameOfBand;
 		this.locationOfBand = locationOfBand;
 		setLevelBandId(levelBandId);
+		this.costOfParticipation = calcCostOfParticipation(numberOfMembers,levelBandId);
 	}
 
 	public int getBandId() {
@@ -104,15 +101,6 @@ public class Bands {
 
 	public void setLevelBandId(int levelBandId) {
 		this.levelBandId = levelBandId;
-		if (this.levelBandId == JUNIOR_HIGH_LEVEL_ID) {
-			this.costOfParticipation = JUNIOR_HIGH_COST - quantityDiscount;
-		} else if (this.levelBandId == HIGH_SCHOOL_LEVEL_ID) {
-			this.costOfParticipation = HIGH_SCHOOL_COST - quantityDiscount;
-		} else if (this.levelBandId == ELEMENTARY_LEVEL_ID) {
-			this.costOfParticipation = ELEMENTARY_COST - quantityDiscount;
-		} else {
-			throw new IllegalStateException("Invalid band level id - " + levelBandId);
-		}
 	}
 
 	public int getNumberOfMembers() {
@@ -121,20 +109,14 @@ public class Bands {
 
 	public void setNumberOfMembers(int numberOfMembers) {
 		this.numberOfMembers = numberOfMembers;
-		if (this.numberOfMembers < 30) {
-			quantityDiscount = 0;
-		} else if (this.numberOfMembers > 100) {
-			quantityDiscount = 15.00;
-		} else {
-			quantityDiscount = 5.50;
-		}
+ 
 		if (this.numberOfMembers < 50) {
 			minimumNumberBuses = 1;
 		} else if (this.numberOfMembers < 100) {
 			minimumNumberBuses = 2;
 		} else {
 			minimumNumberBuses = 3;
-		} 
+		}
 	}
 
 	public String getNameOfBand() {
@@ -156,6 +138,10 @@ public class Bands {
 	public double getCostOfParticipation() {
 		return costOfParticipation;
 	}
+	
+	public void setCostOfParticipation(int numberOfMembers2, int levelOfBand2) {
+		this.costOfParticipation = calcCostOfParticipation(numberOfMembers,levelBandId);
+	}
 
 	public String getLevelOfBand() {
 		if (this.levelBandId == JUNIOR_HIGH_LEVEL_ID) {
@@ -164,44 +150,40 @@ public class Bands {
 			this.levelOfBand = "Highschool";
 		} else if (this.levelBandId == ELEMENTARY_LEVEL_ID) {
 			this.levelOfBand = "Elementary";
-		} 
+		}
 		return levelOfBand;
 	}
 
 	public void setLevelOfBand(String levelOfBand) {
 		this.levelOfBand = levelOfBand;
-		if (this.levelOfBand.equalsIgnoreCase("jh")) {
-			this.costOfParticipation = JUNIOR_HIGH_COST - quantityDiscount;
-		} else if (this.levelOfBand.equalsIgnoreCase("HS")) {
-			this.costOfParticipation = HIGH_SCHOOL_COST - quantityDiscount;
-		} else {
-			throw new IllegalStateException("Invalid band level");
-		}
+ 
 	}
 
-//	private double calcCostOfParticipation(int numberOfMembers2, int levelOfBand2) {
-//		// TODO Auto-generated method stub
-//		
-//
-//			if (this.numberOfMembers < 25) {
-//				quantityDiscount = 0;
-//			} else if (this.numberOfMembers > 100) {
-//				quantityDiscount = 10.00;
-//			} else {
-//				quantityDiscount = 5.50;
-//			}
-//			
-//			Double totalCostOfParticipation;
-//			if (this.levelOfBand == ELEMENTARY_LEVEL_ID) {
-//				totalCostOfParticipation = 0.0;
-//			} else if (this.levelOfBand == JUNIOR_HIGH_LEVEL_ID) {
-//				totalCostOfParticipation = JUNIOR_HIGH_COST - quantityDiscount;
-//			} else {
-//				totalCostOfParticipation = HIGH_SCHOOL_COST - quantityDiscount;
-//			}
-//	//1		totalCostOfParticipation = 599.99;
-//			return totalCostOfParticipation;
-//	}
+	private double calcCostOfParticipation(int numberOfMembers2, int levelOfBand2) {
+		// TODO Auto-generated method stub
+		System.out.println("members " + numberOfMembers);
+		if (numberOfMembers < 30) {
+			quantityDiscount = 0;
+		} else if (numberOfMembers > 100) {
+			quantityDiscount = 15.00;
+		} else {
+			quantityDiscount = 5.50;
+		} 
+		
+		System.out.println("level " + levelBandId);
+		if (levelBandId == JUNIOR_HIGH_LEVEL_ID) {
+			this.costOfParticipation = JUNIOR_HIGH_COST - quantityDiscount;
+		} else if (levelBandId == HIGH_SCHOOL_LEVEL_ID) {
+			this.costOfParticipation = HIGH_SCHOOL_COST - quantityDiscount;
+		} else if (levelBandId == ELEMENTARY_LEVEL_ID) {
+			this.costOfParticipation = ELEMENTARY_COST - quantityDiscount;
+		} else {
+			throw new IllegalStateException("Invalid band level id - " + levelBandId);
+		}
+		System.out.println(costOfParticipation);
+		return costOfParticipation;
+	}
+
 	@Override
 	public String toString() {
 		return "Bands [numberOfMembers=" + numberOfMembers + ", nameOfBand=" + nameOfBand + ", locationOfBand="
@@ -214,10 +196,12 @@ public class Bands {
 				+ df.format(costOfParticipation) + " to join.";
 
 	}
+
 	public String bandNameReport() {
 		return this.nameOfBand;
 
 	}
+
 	public String returnBandDetails() {
 		// TODO Auto-generated method stub
 		String bandLevelDescription = "";

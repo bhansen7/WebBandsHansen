@@ -40,16 +40,31 @@ public class EditPepBandServlet extends HttpServlet {
 		PepBandHelper dao = new PepBandHelper();
 		
 		String bandName = request.getParameter("name of band"); 
-		String locationOfBand = request.getParameter("location of band"); 
+		String locationOfBand = request.getParameter("location of band");  
+		String numberOfMembersStr = request.getParameter("number of members");
+		Integer levelOfBand = Integer.parseInt(request.getParameter("level of band"));
 		String eventIdStr = request.getParameter("Event Id");
 		
 		Integer tempId = Integer.parseInt(request.getParameter("bandId"));
 		Integer eventId = Integer.parseInt(eventIdStr);
-		
+		try { 
+	        Integer.parseInt(numberOfMembersStr); 
+	    } catch(NumberFormatException e) { 
+	    	getServletContext().getRequestDispatcher("/PepBandNumericError.jsp").forward(request, response);
+	    } catch(NullPointerException e) {
+	    	getServletContext().getRequestDispatcher("/PepBandNumericError.jsp").forward(request, response);
+	    }
+		Integer numberOfMembers = Integer.parseInt(request.getParameter("number of members"));
 		PepBand itemToUpdate = dao.searchForBandById(tempId);
 		itemToUpdate.setNameOfBand(bandName);
 		itemToUpdate.setLocationOfBand(locationOfBand);
 		itemToUpdate.setEventId(eventId);
+
+		itemToUpdate.setLocationOfBand(locationOfBand);
+		itemToUpdate.setNumberOfMembers(numberOfMembers);
+		itemToUpdate.setLevelBandId(levelOfBand);
+		itemToUpdate.setCostOfParticipation(numberOfMembers, levelOfBand);
+		
 		
 		dao.updateBands(itemToUpdate);
 		
