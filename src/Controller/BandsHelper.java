@@ -29,8 +29,6 @@ public class BandsHelper {
 		em.close();
 		return allBands; 
 	}
-	
-
 
 	public void deleteBands(Bands toDelete) {
 		// TODO Auto-generated method stub
@@ -52,11 +50,37 @@ public class BandsHelper {
 		// TODO Auto-generated method stub
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
+		
+		
+		
 		Bands foundItem =  em.find(Bands.class, idToEdit);
 		em.close();
 		return foundItem; 
 	}
-
+	
+//	public  String searchForBandNameById(Bands id) {
+//		// TODO Auto-generated method stub
+//		EntityManager em = emfactory.createEntityManager();
+//		em.getTransaction().begin(); 
+//		
+//		
+//		TypedQuery<Bands> typedQuery = em.createQuery(
+//				"select li from Bands li where li.bandId = :selectedId",
+//				Bands.class);
+//		typedQuery.setParameter("id", id.getNameOfBand()); 
+//		typedQuery.setMaxResults(1);
+//		String foundItem = typedQuery.getSingleResult();
+//		System.out.println("TEST - result: " + foundItem);
+//		
+//		//Bands foundItem =  em.find(Bands.class, id);  
+//		em.close();
+//		System.out.println("found Item " + foundItem);
+//		//System.out.println(nameOfBand);
+//		return foundItem; 
+//		
+//
+//	}
+//	
 	public void updateBands(Bands toEdit) {
 		// TODO Auto-generated method stub
 		EntityManager em = emfactory.createEntityManager();

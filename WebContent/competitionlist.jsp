@@ -22,16 +22,14 @@ table, td, th {
 <h2>View All Competitions</h2>
 <form method = "post" action = "AlterCompetitionServlet">
 		<table>
-		<tr> 
-			<th> </th>
+		<tr>  
 			<th>Competition Name</th>
 			<th>Band ID</th> 
 		</tr>
 			<c:forEach items="${requestScope.allItems}" var="currentitem">
 				<tr>
-					<td><input type="radio" name="competitionId" value="${currentitem.competitionId}"></td>
 					<td>${currentitem.getCompetitionName()}</td>
-					<td>${currentitem.getBandName()}</td>
+					<td>${currentitem.bandId}</td> 
 				</tr>
 			</c:forEach>
 		</table>  

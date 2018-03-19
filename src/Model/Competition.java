@@ -9,6 +9,8 @@ import javax.persistence.IdClass;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import Controller.BandsHelper;
+
 @Entity @IdClass(CompetitionId.class)
 @Table(name = "participating_bands")
 
@@ -56,22 +58,14 @@ public class Competition {
 		return competitionName;
 	}
 	
-	public String getBandName() {
-//		if (this.bandId == 3) {
-//			this.bandName = "band 3";
-//		}else if (this.bandId == 4) {
-//			this.bandName = "Band 4";
-//		}else {
-//			this.bandName = "All Others";
-//		}
-		//I just get nulls with this
-		//in bandhelper create method tha gets band name from band then call from here
-		//Bands nb = new Bands();
-		//bandName = nb.getNameOfBand();
-		//System.out.println(bandName);
-		 
-		return bandName;
-	}
+//	public String getBandName() {
+//		BandsHelper dao = new BandsHelper();  
+//		Bands bandToEdit = dao.searchForBandById(bandId);
+//		System.out.println(bandToEdit);
+//		BandsHelper dao1 = new BandsHelper();
+//		String bandName = dao1.searchForBandNameById(bandToEdit);
+//		return bandName;
+//	}
 
 	@Override
 	public String toString() {
