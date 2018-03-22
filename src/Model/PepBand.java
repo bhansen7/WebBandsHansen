@@ -107,10 +107,7 @@ public class PepBand extends Bands {
 	@Override
 	public String bandReport() {
 		
-		// TODO Auto-generated method stub
-		//what we used before persistence
-		//return super.bandReport() + " You will be " + playingPosition + " while playing at the " + eventName + " "
-		//		+ event + " event."; 
+		// TODO Auto-generated method stub 
 		
 		String eventTypeDescription = "";
 		if (eventId < 5) {

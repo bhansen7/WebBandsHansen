@@ -36,17 +36,10 @@ public class AlterCompetitionServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String act = request.getParameter("doThisToCompetition");
-		//CompetitionHelper dao = new CompetitionHelper(); 
+		String act = request.getParameter("doThisToCompetition"); 
 		System.out.println("act " + act);
 		if (act == null) {
 			getServletContext().getRequestDispatcher("/viewCompetitionListServlet").forward(request, response);
-		//} else if (act.equals("Delete Selected Band")) {
-		//	Integer tempId = Integer.parseInt(request.getParameter("bandId"));
-		//	Competition bandToDelete = dao.searchForBandById(tempId);
-		//	
-		//	dao.deleteBandfromCompetition(bandToDelete);
-		//	getServletContext().getRequestDispatcher("/viewCompetitionListServlet").forward(request, response);
 			
 		} else if (act.equals("Add Band to Competition")) {
 			getServletContext().getRequestDispatcher("/addCompetition.html").forward(request, response);
